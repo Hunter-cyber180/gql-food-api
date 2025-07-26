@@ -6,7 +6,8 @@ const FoodSchema = new Schema({
     price: { type: Number, required: true },
     inventory: { type: Number, required: true },
     image: { type: String, required: true },
-    category: { type: mongoose.Types.ObjectId, ref: "Category", required: true }
+    category: { type: mongoose.Types.ObjectId, ref: "Category", required: true },
+    subCategory: { type: mongoose.Types.ObjectId, ref: "SubCategory", default: null }
 }, { timestamps: true });
 
 module.exports = mongoose.model("Food", FoodSchema);
