@@ -8,3 +8,5 @@ const FoodSchema = new Schema({
     image: { type: String, required: true },
     category: { type: mongoose.Types.ObjectId, ref: "Category", required: true }
 }, { timestamps: true });
+
+module.exports = mongoose.model("Food", FoodSchema);
