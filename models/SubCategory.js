@@ -6,3 +6,5 @@ const SubCategorySchema = new Schema({
     title: { type: String, required: true },
     icon: { type: String, required: true }
 }, { timestamps: true });
+
+module.exports = mongoose.model("SubCategory", SubCategorySchema);
