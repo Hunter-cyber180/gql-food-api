@@ -7,3 +7,5 @@ const OrderSchema = new Schema({
     quantity: { type: Number, required: true },
     price: { type: Number, required: true }
 }, { timestamps: true });
+
+module.exports = mongoose.model("Order", OrderSchema);
