@@ -6,3 +6,11 @@ exports.Basket = `
     quantity: Int
   }
 `;
+
+exports.BasketInput = `
+  input BasketInput {
+    user: String!
+    food: String!
+    quantity: Int!
+  }
+`;
