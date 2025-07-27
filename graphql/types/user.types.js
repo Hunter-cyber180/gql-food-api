@@ -9,6 +9,13 @@ exports.User = `
   }
 `;
 
+exports.RoleEnum = `
+  enum RoleEnum {
+    ADMIN
+    USER
+  }
+`;
+
 exports.AuthResult = `
   type AuthResult {
     token: String
