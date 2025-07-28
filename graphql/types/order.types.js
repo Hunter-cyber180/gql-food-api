@@ -7,3 +7,14 @@ exports.Order = `
     isDeliver: Boolean
   }
 `;
+
+
+exports.OrderInput = `
+  input OrderInput {
+    user: ID
+    food: ID
+    quantity: Int
+    price: Int
+    isDeliver: Boolean
+  }
+`;
