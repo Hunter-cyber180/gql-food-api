@@ -9,3 +9,14 @@ exports.Food = `
     image: String
   }
 `;
+
+exports.FoodInput = `
+  input FoodInput {
+    name: String
+    price: Int
+    inventory: Int
+    image: String
+    category: ID
+    subCategory: ID
+  }
+`;
