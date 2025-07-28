@@ -26,6 +26,14 @@ exports.RegisterInput = `
   }
 `;
 
+exports.LoginInput = `
+  input LoginInput @oneOf {
+    email: String
+    phoneNumber: Int
+    password: String!
+  }
+`;
+
 exports.AuthResult = `
   type AuthResult {
     token: String
