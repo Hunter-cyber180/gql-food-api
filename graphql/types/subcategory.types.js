@@ -1,5 +1,5 @@
 exports.SubCategory = `
-  type Category {
+  type SubCategory {
     _id: ID
     category: Category
     title: String
