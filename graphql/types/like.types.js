@@ -5,3 +5,10 @@ exports.Like = `
     food: Food
   }
 `;
+
+exports.LikeInput = `
+  input LikeInput {
+    user: ID
+    food: ID
+  }
+`;
