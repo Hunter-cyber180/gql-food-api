@@ -7,3 +7,12 @@ exports.SubCategory = `
     foods: [Food]
   }
 `;
+
+exports.SubCategoryInput = `
+  input SubCategoryInput {
+    category: ID
+    title: String
+    icon: String
+    foods: [ID]
+  }
+`;
