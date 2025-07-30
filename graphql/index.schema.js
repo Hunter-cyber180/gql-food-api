@@ -38,6 +38,7 @@ module.exports = `#graphql
         subCategory(id: ID!): SubCategory
         likes: [Like!]!
         like(id: ID!): Like
+        basket(id: ID!): Basket
     }
    
     type Mutation {
