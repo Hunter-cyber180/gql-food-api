@@ -8,7 +8,7 @@ const orderTypes = require("./types/order.types");
 
 module.exports = `#graphql
     ${foodTypes.Food}
-    
+    ${categoryTypes.Category}
 
     type Query {
 
