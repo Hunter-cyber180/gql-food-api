@@ -36,6 +36,7 @@ module.exports = `#graphql
         order(id: ID!): Order
         subCategories: [SubCategory!]!
         subCategory(id: ID!): SubCategory
+        likes: [Like!]!
     }
    
     type Mutation {
