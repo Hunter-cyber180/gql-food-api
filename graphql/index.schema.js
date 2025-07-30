@@ -30,8 +30,9 @@ module.exports = `#graphql
         category(id: ID!): Category
         users: [User]
         user(id: ID!): User
-        foods: [Food]
+        foods: [Food!]!
         food(id: ID!): Food
+        orders: [Order!]!
     }
    
     type Mutation {
