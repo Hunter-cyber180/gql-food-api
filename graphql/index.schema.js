@@ -8,7 +8,9 @@ const orderTypes = require("./types/order.types");
 
 module.exports = `#graphql
     ${foodTypes.Food}
+    ${foodTypes.FoodInput}
     ${categoryTypes.Category}
+    ${categoryTypes.CategoryInput}
 
     type Query {
 
