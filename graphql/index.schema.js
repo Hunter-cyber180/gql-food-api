@@ -22,6 +22,8 @@ module.exports = `#graphql
     ${likeTypes.LikeInput}
     ${subCategoryTypes.SubCategory}
     ${subCategoryTypes.SubCategoryInput}
+    ${orderTypes.Order}
+    ${orderTypes.OrderInput}
 
     type Query {
 
