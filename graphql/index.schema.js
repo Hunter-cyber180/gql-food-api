@@ -28,6 +28,7 @@ module.exports = `#graphql
     type Query {
         categories: [Category!]!
         users: [User]
+        user(id: ID!): User
         foods: [Food]
         food(id: ID!): Food
     }
