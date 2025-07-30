@@ -20,6 +20,8 @@ module.exports = `#graphql
     ${basketTypes.BasketInput}
     ${likeTypes.Like}
     ${likeTypes.LikeInput}
+    ${subCategoryTypes.SubCategory}
+    ${subCategoryTypes.SubCategoryInput}
 
     type Query {
 
