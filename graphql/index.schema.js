@@ -42,6 +42,6 @@ module.exports = `#graphql
     }
    
     type Mutation {
-
+        addCategory(title: String, icon: String): Category
     }
 `;
