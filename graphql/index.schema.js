@@ -11,6 +11,11 @@ module.exports = `#graphql
     ${foodTypes.FoodInput}
     ${categoryTypes.Category}
     ${categoryTypes.CategoryInput}
+    ${userTypes.User}
+    ${userTypes.RegisterInput}
+    ${userTypes.LoginInput}
+    ${userTypes.RoleEnum}
+    ${userTypes.AuthResult}
 
     type Query {
 
