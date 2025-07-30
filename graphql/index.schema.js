@@ -18,6 +18,8 @@ module.exports = `#graphql
     ${userTypes.AuthResult}
     ${basketTypes.Basket}
     ${basketTypes.BasketInput}
+    ${likeTypes.Like}
+    ${likeTypes.LikeInput}
 
     type Query {
 
