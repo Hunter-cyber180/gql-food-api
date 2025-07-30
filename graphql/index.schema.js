@@ -26,7 +26,7 @@ module.exports = `#graphql
     ${orderTypes.OrderInput}
 
     type Query {
-
+        categories: [Category!]!
     }
    
     type Mutation {
