@@ -29,6 +29,7 @@ module.exports = `#graphql
         categories: [Category!]!
         users: [User]
         foods: [Food]
+        food(id: ID!): Food
     }
    
     type Mutation {
