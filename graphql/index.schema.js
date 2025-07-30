@@ -16,6 +16,8 @@ module.exports = `#graphql
     ${userTypes.LoginInput}
     ${userTypes.RoleEnum}
     ${userTypes.AuthResult}
+    ${basketTypes.Basket}
+    ${basketTypes.BasketInput}
 
     type Query {
 
