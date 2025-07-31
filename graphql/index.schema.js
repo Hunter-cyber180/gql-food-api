@@ -46,5 +46,6 @@ module.exports = `#graphql
         addCategory(input: CategoryInput!): Category
         register(input: RegisterInput!): AuthResult
         login(input: LoginInput!): AuthResult
+        addOrder(input: OrderInput!): Order
     }
 `;
