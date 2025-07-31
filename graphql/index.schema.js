@@ -45,6 +45,7 @@ module.exports = `#graphql
         addFood(input: FoodInput!): Food
         addCategory(input: CategoryInput!): Category
         editCategory(input: CategoryInput!): Category
+        deleteCategory(id: ID!): Category
         addSubCategory(input: SubCategoryInput!): SubCategory
         editSubCategory(input: SubCategoryInput!): SubCategory
         deleteSubCategory(id: ID!): SubCategory
