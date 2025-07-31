@@ -42,7 +42,7 @@ module.exports = `#graphql
     }
    
     type Mutation {
-        addFood(name: String, price: Int, category: ID, inventory: Int, subCategory: ID, image: String): Food
+        addFood(input: FoodInput!): Food
         addCategory(input: CategoryInput!): Category
         register(input: RegisterInput!): AuthResult
     }
