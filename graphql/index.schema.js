@@ -45,5 +45,6 @@ module.exports = `#graphql
         addFood(input: FoodInput!): Food
         addCategory(input: CategoryInput!): Category
         register(input: RegisterInput!): AuthResult
+        login(input: LoginInput!): AuthResult
     }
 `;
