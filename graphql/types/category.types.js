@@ -11,6 +11,5 @@ exports.CategoryInput = `
   input CategoryInput {
     title: String
     icon: String
-    foods: [ID]
   }
 `;
