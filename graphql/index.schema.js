@@ -45,6 +45,7 @@ module.exports = `#graphql
         addFood(input: FoodInput!): Food
         addCategory(input: CategoryInput!): Category
         addSubCategory(input: SubCategoryInput!): SubCategory
+        deleteSubCategory(id: ID!): SubCategory
         register(input: RegisterInput!): AuthResult
         login(input: LoginInput!): AuthResult
         addOrder(input: OrderInput!): Order
