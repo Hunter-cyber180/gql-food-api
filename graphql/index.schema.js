@@ -47,6 +47,7 @@ module.exports = `#graphql
         register(input: RegisterInput!): AuthResult
         login(input: LoginInput!): AuthResult
         addOrder(input: OrderInput!): Order
+        deleteOrder(id: ID!): Order
         deliverOrder(id: ID!): Order
     }
 `;
