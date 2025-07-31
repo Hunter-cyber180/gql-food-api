@@ -44,6 +44,7 @@ module.exports = `#graphql
     type Mutation {
         addFood(input: FoodInput!): Food
         addCategory(input: CategoryInput!): Category
+        editCategory(input: CategoryInput!): Category
         addSubCategory(input: SubCategoryInput!): SubCategory
         editSubCategory(input: SubCategoryInput!): SubCategory
         deleteSubCategory(id: ID!): SubCategory
