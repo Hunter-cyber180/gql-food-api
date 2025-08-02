@@ -15,8 +15,13 @@ const food = async ({ id: _id }) => {
     return await FoodModel.findOne({ _id });
 }
 
+const deleteFood = async ({ id: _id }) => {
+    return await FoodModel.findOneAndDelete({ _id });
+}
+
 module.exports = {
     foods,
     food,
-    addFood
+    addFood,
+    deleteFood
 }
