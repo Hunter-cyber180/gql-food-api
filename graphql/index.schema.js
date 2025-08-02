@@ -59,5 +59,6 @@ module.exports = `#graphql
         addLike(input: LikeInput!): Like
         deleteLike(id: ID!): Like
         addBasket(input: BasketInput!): Basket
+        editBasket(input: BasketInput!): Basket
     }
 `;
