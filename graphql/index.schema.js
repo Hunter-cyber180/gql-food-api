@@ -57,5 +57,6 @@ module.exports = `#graphql
         deleteOrder(id: ID!): Order
         deliverOrder(id: ID!): Order
         addLike(input: LikeInput!): Like
+        deleteLike(id: ID!): Like
     }
 `;
