@@ -12,7 +12,7 @@ const addCategory = async (_, args, context) => {
 const editCategory = async ({ id: _id }, args, context) => {
     const { title, icon, category } = args;
     // TODO => validate admin token
-    return await SubCategoryModel.findByIdAndUpdate({ _id }, { title, icon, category });
+    return await SubCategoryModel.findOneAndUpdate({ _id }, { title, icon, category });
 }
 
 const deleteSubCategory = async ({ id: _id }) =>
