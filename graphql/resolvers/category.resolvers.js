@@ -1,7 +1,7 @@
 // * ---- Models ----
 const CategoryModel = require("../../models/Category");
 
-categories = async () => await CategoryModel.find({});
+const categories = async () => await CategoryModel.find({});
 
 const addCategory = async (_, args, context) => {
     const { title, icon } = args;
