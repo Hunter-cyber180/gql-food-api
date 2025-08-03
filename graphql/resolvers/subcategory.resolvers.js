@@ -15,8 +15,12 @@ const editCategory = async ({ id: _id }, args, context) => {
     return await SubCategoryModel.findByIdAndUpdate({ _id }, { title, icon, category });
 }
 
+const deleteSubCategory = async ({ id: _id }) =>
+    await SubCategoryModel.findOneAndDelete({ _id });
+
 module.exports = {
     subCategories,
     addCategory,
-    editCategory
+    editCategory,
+    deleteSubCategory,
 };
