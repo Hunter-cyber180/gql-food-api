@@ -1,7 +1,7 @@
 // * ---- Models ----
 const SubCategoryModel = require("../../models/SubCategory");
 
-subCategories = async () => await SubCategoryModel.find({});
+const subCategories = async () => await SubCategoryModel.find({});
 
 const addSubCategory = async (_, args, context) => {
     const { title, icon, category } = args;
