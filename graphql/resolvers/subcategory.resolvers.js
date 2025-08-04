@@ -3,6 +3,8 @@ const SubCategoryModel = require("../../models/SubCategory");
 
 const subCategories = async () => await SubCategoryModel.find({});
 
+const subCategory = async ({ id: _id }) => await SubCategoryModel.findOne({ _id });
+
 const addSubCategory = async (_, args, context) => {
     const { title, icon, category } = args;
     // TODO => validate admin token
@@ -20,6 +22,7 @@ const deleteSubCategory = async ({ id: _id }) =>
 
 module.exports = {
     subCategories,
+    subCategory,
     addSubCategory,
     editSubCategory,
     deleteSubCategory,
