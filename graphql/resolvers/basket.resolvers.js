@@ -17,9 +17,12 @@ const editBasket = async ({ id: _id }, args, context) => {
     return await BasketModel.findOneAndUpdate({ _id }, { quantity, user, food });
 }
 
+const deleteBasket = async ({ id: _id }) => await BasketModel.findOneAndDelete({ _id })
+
 module.exports = {
     baskets,
     basket,
     addBasket,
-    editBasket
+    editBasket,
+    deleteBasket
 };
