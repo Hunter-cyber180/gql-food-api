@@ -11,8 +11,15 @@ const addBasket = async (_, args, context) => {
     return await BasketModel.create({ quantity, user, food });
 }
 
+const editBasket = async ({ id: _id }, args, context) => {
+    const { quantity, user, food } = args;
+    // TODO => validate admin token
+    return await BasketModel.findOneAndUpdate({ _id }, { quantity, user, food });
+}
+
 module.exports = {
     baskets,
     basket,
-    addBasket
+    addBasket,
+    editBasket
 };
