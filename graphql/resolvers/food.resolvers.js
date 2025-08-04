@@ -7,6 +7,12 @@ const addFood = async (args, req) => {
     return await FoodModel.create({ name, price, category, image, inventory });
 }
 
+const editFood = async ({ id: _id }, args, context) => {
+    const { name, price, inventory, image, category, subCategory } = args;
+    // TODO => validate admin token
+    return await FoodModel.findOneAndUpdate({ _id }, { name, price, category, image, inventory });
+}
+
 const foods = async () => {
     return await FoodModel.find({});
 }
@@ -23,5 +29,6 @@ module.exports = {
     foods,
     food,
     addFood,
-    deleteFood
+    deleteFood,
+    editFood
 }
