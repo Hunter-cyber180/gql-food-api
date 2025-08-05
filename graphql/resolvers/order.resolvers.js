@@ -11,8 +11,13 @@ const addOrder = async (_, args, context) => {
     return await OrderModel.create({ quantity, user, food, price, isDeliver });
 }
 
+const deleteOrder = async ({ id: _id }) => {
+    return await OrderModel.findOneAndDelete({ _id });
+}
+
 module.exports = {
     orders,
     order,
-    addOrder
+    addOrder,
+    deleteOrder
 };
