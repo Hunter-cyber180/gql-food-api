@@ -34,3 +34,7 @@ const orderSchema = new Schema({
         message: "IsDeliver is required!",
     },
 });
+
+module.exports = {
+    orderValidator: (object) => orderSchema.validate(object)
+};
