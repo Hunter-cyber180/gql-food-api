@@ -18,4 +18,9 @@ const orderSchema = new Schema({
             message: "foodID must be a valid MongoDB ObjectId!"
         }
     },
+    quantity: {
+        type: String,
+        required: true,
+        message: "quantity is required!",
+    },
 });
