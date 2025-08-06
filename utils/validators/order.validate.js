@@ -28,4 +28,9 @@ const orderSchema = new Schema({
         required: true,
         message: "Price is required!",
     },
+    isDeliver: {
+        type: Boolean,
+        required: true,
+        message: "IsDeliver is required!",
+    },
 });
