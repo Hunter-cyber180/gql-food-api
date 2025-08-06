@@ -9,5 +9,13 @@ const orderSchema = new Schema({
             validator: (v) => mongoose.Types.ObjectId.isValid(v),
             message: "userID must be a valid MongoDB ObjectId!"
         }
-    }
+    },
+    food: {
+        type: String,
+        required: true,
+        validate: {
+            validator: (v) => mongoose.Types.ObjectId.isValid(v),
+            message: "foodID must be a valid MongoDB ObjectId!"
+        }
+    },
 });
