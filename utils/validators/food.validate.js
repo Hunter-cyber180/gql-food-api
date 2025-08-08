@@ -39,3 +39,7 @@ const foodSchema = new Schema({
         message: "Price is required!",
     },
 });
+
+module.exports = {
+    foodValidator: (object) => foodSchema.validate(object)
+};
