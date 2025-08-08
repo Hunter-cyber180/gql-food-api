@@ -9,5 +9,13 @@ const foodSchema = new Schema({
             validator: (v) => mongoose.Types.ObjectId.isValid(v),
             message: "categoryID must be a valid MongoDB ObjectId!"
         }
-    }
+    },
+    subCategory: {
+        type: String,
+        required: true,
+        validate: {
+            validator: (v) => mongoose.Types.ObjectId.isValid(v),
+            message: "SubCategoryID must be a valid MongoDB ObjectId!"
+        }
+    },
 });
