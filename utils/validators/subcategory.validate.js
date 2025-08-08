@@ -21,3 +21,7 @@ const subCategorySchema = new Schema({
         message: "Icon is required!",
     },
 });
+
+module.exports = {
+    subCategoryValidator: (object) => subCategorySchema.validate(object)
+};
