@@ -18,4 +18,9 @@ const foodSchema = new Schema({
             message: "SubCategoryID must be a valid MongoDB ObjectId!"
         }
     },
+    name: {
+        type: String,
+        required: true,
+        message: "Name is required!",
+    },
 });
