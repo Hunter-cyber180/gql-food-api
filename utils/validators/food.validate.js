@@ -33,4 +33,9 @@ const foodSchema = new Schema({
         required: true,
         message: "Inventory is required!",
     },
+    price: {
+        type: String,
+        required: true,
+        message: "Price is required!",
+    },
 });
