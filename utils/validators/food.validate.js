@@ -23,4 +23,9 @@ const foodSchema = new Schema({
         required: true,
         message: "Name is required!",
     },
+    image: {
+        type: String,
+        required: true,
+        message: "Image is required!",
+    },
 });
