@@ -15,4 +15,9 @@ const subCategorySchema = new Schema({
         required: true,
         message: "Title is required!",
     },
+    icon: {
+        type: String,
+        required: true,
+        message: "Icon is required!",
+    },
 });
