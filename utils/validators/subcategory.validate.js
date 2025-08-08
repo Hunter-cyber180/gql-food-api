@@ -10,4 +10,9 @@ const subCategorySchema = new Schema({
             message: "categoryID must be a valid MongoDB ObjectId!"
         }
     },
+    title: {
+        type: String,
+        required: true,
+        message: "Title is required!",
+    },
 });
