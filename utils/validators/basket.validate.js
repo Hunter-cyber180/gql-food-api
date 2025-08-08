@@ -24,3 +24,7 @@ const basketSchema = new Schema({
         message: "Quantity is required!",
     },
 });
+
+module.exports = {
+    basketValidator: (object) => basketSchema.validate(object)
+};
