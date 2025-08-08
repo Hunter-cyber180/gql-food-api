@@ -28,4 +28,9 @@ const foodSchema = new Schema({
         required: true,
         message: "Image is required!",
     },
+    inventory: {
+        type: String,
+        required: true,
+        message: "Inventory is required!",
+    },
 });
