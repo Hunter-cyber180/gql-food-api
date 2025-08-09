@@ -11,13 +11,14 @@ const basket = async ({ id: _id }) => await BasketModel.findOne({ _id });
 const addBasket = async (_, args, context) => {
     const { quantity, user, food } = args;
     await adminValidator(context.req);
-    
+
     return await BasketModel.create({ quantity, user, food });
 }
 
 const editBasket = async ({ id: _id }, args, context) => {
     const { quantity, user, food } = args;
-    // TODO => validate admin token
+    await adminValidator(context.req);
+
     return await BasketModel.findOneAndUpdate({ _id }, { quantity, user, food });
 }
 
