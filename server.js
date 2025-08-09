@@ -9,6 +9,9 @@ const rootResolvers = require("./graphql/index.resolver");
 // * ---- Schema ----
 const schema = require("./graphql/index.schema");
 
+// ** ---- DotEnv ----
+require("dotenv").config();
+
 // * Create App
 const app = express();
 
