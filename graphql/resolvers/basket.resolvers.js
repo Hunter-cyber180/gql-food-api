@@ -1,13 +1,17 @@
 // * ---- Models ----
 const BasketModel = require("../../models/Basket");
 
+// * ---- Utils ----
+const { adminValidator } = require("../../utils/auth");
+
 const baskets = async () => await BasketModel.find({});
 
 const basket = async ({ id: _id }) => await BasketModel.findOne({ _id });
 
 const addBasket = async (_, args, context) => {
     const { quantity, user, food } = args;
-    // TODO => validate admin token
+    await adminValidator(context.req);
+    
     return await BasketModel.create({ quantity, user, food });
 }
 
