@@ -10,15 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apollo-server-express": "^3.13.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
     "express": "^4.19.2",
     "graphql": "^16.8.1",
     "graphql-http": "^1.22.1",
-    "mongoose": "^8.4.0",
-    "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.2",
-    "dotenv": "^16.4.5",
-    "validate": "5.2.0",
-    "cors": "^2.8.5",
-    "apollo-server-express": "^3.13.0"
+    "mongoose": "^8.4.0",
+    "validate": "5.2.0"
   }
 }

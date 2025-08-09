@@ -9,4 +9,6 @@ const authValidator = async (req) => {
     const token = authHeader.replace("Bearer ", "");
     if (!token)
         throw new Error("No token found!");
+
+    // TODO => verify token and get user
 };
