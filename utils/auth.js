@@ -18,8 +18,8 @@ const authValidator = async (req) => {
     return user;
 };
 
-const adminValidator = async () => {
-    const { role } = await authValidator(context.req);
+const adminValidator = async (request) => {
+    const { role } = await authValidator(request);
     if (role !== "ADMIN")
         throw new Error("You don't have access!");
 }
