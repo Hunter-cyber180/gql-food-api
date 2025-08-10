@@ -5,10 +5,16 @@ const UserModel = require("../../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
+// * ---- Utils ----
+const { registerValidator } = require("../../utils/validators/user.validate");
+
 const registerUser = async (_, { input }) => {
     const { name, email, phoneNumber, password, role } = input;
 
-    // TODO => validate data
+    const validateResult = registerValidator(input);
+    const error = validateResult[0] ? validateResult[0].message : undefined;
+    if (error)
+        throw new Error(error);
 
     const isUserExist = await UserModel.findOne({
         $or: [
