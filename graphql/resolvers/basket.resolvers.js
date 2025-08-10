@@ -10,7 +10,6 @@ const basket = async ({ id: _id }) => await BasketModel.findOne({ _id });
 
 const addBasket = async (_, args, context) => {
     const { quantity, user, food } = args;
-    await adminValidator(context.req);
 
     return await BasketModel.create({ quantity, user, food });
 }
