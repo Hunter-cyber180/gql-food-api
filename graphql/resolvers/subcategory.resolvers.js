@@ -1,13 +1,17 @@
 // * ---- Models ----
 const SubCategoryModel = require("../../models/SubCategory");
 
+// * ---- Utils ----
+const { adminValidator } = require("../../utils/auth");
+
 const subCategories = async () => await SubCategoryModel.find({});
 
 const subCategory = async ({ id: _id }) => await SubCategoryModel.findOne({ _id });
 
 const addSubCategory = async (_, args, context) => {
     const { title, icon, category } = args;
-    // TODO => validate admin token
+    await adminValidator(context.req);
+
     return await SubCategoryModel.create({ title, icon, category });
 }
 
