@@ -1,9 +1,13 @@
 // * ---- Models ----
 const FoodModel = require("../../models/Food");
 
+// * ---- Utils ----
+const { adminValidator } = require("../../utils/auth");
+
 const addFood = async (args, req) => {
     const { name, price, inventory, image, category, subCategory } = args;
-    // TODO => validate admin token
+    await adminValidator(context.req);
+
     return await FoodModel.create({ name, price, category, image, inventory });
 }
 
