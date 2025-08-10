@@ -13,7 +13,8 @@ const addFood = async (args, req) => {
 
 const editFood = async ({ id: _id }, args, context) => {
     const { name, price, inventory, image, category, subCategory } = args;
-    // TODO => validate admin token
+    await adminValidator(context.req);
+
     return await FoodModel.findOneAndUpdate({ _id }, { name, price, category, image, inventory });
 }
 
