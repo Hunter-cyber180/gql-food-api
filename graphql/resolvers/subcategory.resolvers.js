@@ -17,7 +17,8 @@ const addSubCategory = async (_, args, context) => {
 
 const editSubCategory = async ({ id: _id }, args, context) => {
     const { title, icon, category } = args;
-    // TODO => validate admin token
+    await adminValidator(context.req);
+
     return await SubCategoryModel.findOneAndUpdate({ _id }, { title, icon, category });
 }
 
