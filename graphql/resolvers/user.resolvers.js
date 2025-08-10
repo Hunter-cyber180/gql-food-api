@@ -33,10 +33,12 @@ const registerUser = async (_, { input }) => {
     const user = new UserModel(userObj);
     await user.save();
 
-    // TODO => create token
+    const token = jwt.sign({ id: user._id }, process.env.TOKEN_KEY, {
+        expiresIn: "2d",
+    });
 
     return {
-        token: "", // temporary
+        token,
         user,
     };
 }
