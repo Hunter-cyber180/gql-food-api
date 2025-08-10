@@ -16,7 +16,6 @@ const addBasket = async (_, args, context) => {
 
 const editBasket = async ({ id: _id }, args, context) => {
     const { quantity, user, food } = args;
-    await adminValidator(context.req);
 
     return await BasketModel.findOneAndUpdate({ _id }, { quantity, user, food });
 }
