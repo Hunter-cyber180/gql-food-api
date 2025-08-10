@@ -11,13 +11,14 @@ const category = async ({ id: _id }) => await CategoryModel.findOne({ _id });
 const addCategory = async (_, args, context) => {
     const { title, icon } = args;
     await adminValidator(context.req);
-    
+
     return await CategoryModel.create({ title, icon });
 }
 
 const editCategory = async ({ id: _id }, args, context) => {
     const { title, icon } = args;
-    // TODO => validate admin token
+    await adminValidator(context.req);
+    
     return await CategoryModel.findOneAndUpdate({ _id }, { title, icon });
 }
 
