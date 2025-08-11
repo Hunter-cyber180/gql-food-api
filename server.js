@@ -18,7 +18,7 @@ const app = express();
 // * ---- Mongoose Connection ----
 mongoose.connect("mongodb://127.0.0.1/graphql-food-api");
 mongoose.connection.once("open", () => {
-    console.log(`Connect to DB successfully`);
+  console.log(`Connect to DB successfully`);
 });
 
 const run = async () => {
@@ -31,4 +31,6 @@ const run = async () => {
 run();
 
 // * ---- Listening ----
-app.listen(8000, "127.0.0.1", () => console.log(`Server running on localhost:8000`));
+app.listen(process.env.PORT, "127.0.0.1", () =>
+  console.log(`Server running on localhost:${process.env.PORT}`)
+);
