@@ -9,6 +9,7 @@ const orderResolvers = require("./resolvers/order.resolvers");
 const RootResolvers = {
     Query: {
         categories: categoryResolvers.categories,
+        category: categoryResolvers.category,
     },
 
     Mutation: {
