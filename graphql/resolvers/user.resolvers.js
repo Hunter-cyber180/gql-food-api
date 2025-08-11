@@ -49,6 +49,23 @@ const registerUser = async (_, { input }) => {
     };
 }
 
+const loginUser = async (_, { input }) => {
+    const { email, phoneNumber, password } = input;
+    // TODO => validate user data
+
+    const user = await UserModel.findOne({
+        $or: [{ email }, { phoneNumber }]
+    });
+
+    if (!user)
+        throw new Error("Invalid Email/phoneNumber or password!");
+
+    const pass = await bcrypt.compare(password, user.password);
+    if (!pass)
+        throw new Error("Invalid Email/phoneNumber or password!");
+}
+
 module.exports = {
     registerUser,
+    loginUser,
 }
