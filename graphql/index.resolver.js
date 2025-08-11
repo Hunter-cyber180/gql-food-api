@@ -11,6 +11,7 @@ const RootResolvers = {
         categories: categoryResolvers.categories,
         category: categoryResolvers.category,
         foods: foodResolvers.foods,
+        food: foodResolvers.food,
     },
 
     Mutation: {
