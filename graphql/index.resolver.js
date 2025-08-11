@@ -10,6 +10,7 @@ const RootResolvers = {
     Query: {
         categories: categoryResolvers.categories,
         category: categoryResolvers.category,
+        foods: foodResolvers.foods,
     },
 
     Mutation: {
