@@ -63,6 +63,15 @@ const loginUser = async (_, { input }) => {
     const pass = await bcrypt.compare(password, user.password);
     if (!pass)
         throw new Error("Invalid Email/phoneNumber or password!");
+
+    const token = jwt.sign({ id: user._id }, process.env.TOKEN_KEY, {
+        expiresIn: "2d",
+    });
+
+    return {
+        token,
+        user,
+    };
 }
 
 module.exports = {
