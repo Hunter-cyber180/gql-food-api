@@ -17,6 +17,7 @@ const RootResolvers = {
         baskets: basketResolvers.baskets,
         basket: basketResolvers.basket,
         orders: orderResolvers.orders,
+        order: orderResolvers.order,
     },
 
     Mutation: {
