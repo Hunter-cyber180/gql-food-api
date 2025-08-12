@@ -11,6 +11,7 @@ const RootResolvers = {
         categories: categoryResolvers.categories,
         category: categoryResolvers.category,
         subCategories: subCategoryResolvers.subCategories,
+        subCategory: subCategoryResolvers.subCategory,
         foods: foodResolvers.foods,
         food: foodResolvers.food,
         likes: likeResolvers.likes,
