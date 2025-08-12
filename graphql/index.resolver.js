@@ -15,6 +15,7 @@ const RootResolvers = {
         likes: likeResolvers.likes,
         like: likeResolvers.like,
         baskets: basketResolvers.baskets,
+        basket: basketResolvers.basket,
     },
 
     Mutation: {
