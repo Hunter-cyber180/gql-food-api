@@ -25,6 +25,7 @@ const RootResolvers = {
     Mutation: {
         addCategory: categoryResolvers.addCategory,
         editCategory: categoryResolvers.editCategory,
+        deleteCategory: categoryResolvers.deleteCategory,
     },
 };
 
