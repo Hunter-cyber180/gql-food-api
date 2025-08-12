@@ -23,7 +23,7 @@ const RootResolvers = {
     },
 
     Mutation: {
-
+        addCategory: categoryResolvers.addCategory,
     },
 };
 
