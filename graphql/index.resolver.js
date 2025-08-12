@@ -28,6 +28,7 @@ const RootResolvers = {
         deleteCategory: categoryResolvers.deleteCategory,
         addSubCategory: subCategoryResolvers.addSubCategory,
         editSubCategory: subCategoryResolvers.editSubCategory,
+        deleteSubCategory: subCategoryResolvers.deleteSubCategory,
     },
 };
 
