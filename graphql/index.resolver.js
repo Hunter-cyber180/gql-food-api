@@ -10,6 +10,7 @@ const RootResolvers = {
     Query: {
         categories: categoryResolvers.categories,
         category: categoryResolvers.category,
+        subCategories: subCategoryResolvers.subCategories,
         foods: foodResolvers.foods,
         food: foodResolvers.food,
         likes: likeResolvers.likes,
