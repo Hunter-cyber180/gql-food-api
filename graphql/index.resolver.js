@@ -34,6 +34,7 @@ const RootResolvers = {
         deleteFood: foodResolvers.deleteFood,
         addBasket: basketResolvers.addBasket,
         editBasket: basketResolvers.editBasket,
+        deleteBasket: basketResolvers.deleteBasket,
     },
 };
 
