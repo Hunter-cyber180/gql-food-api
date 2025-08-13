@@ -40,6 +40,7 @@ const RootResolvers = {
         addOrder: orderResolvers.addOrder,
         deleteOrder: orderResolvers.deleteOrder,
         registerUser: userResolvers.registerUser,
+        loginUser: userResolvers.loginUser,
     },
 };
 
