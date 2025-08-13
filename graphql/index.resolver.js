@@ -35,6 +35,7 @@ const RootResolvers = {
         addBasket: basketResolvers.addBasket,
         editBasket: basketResolvers.editBasket,
         deleteBasket: basketResolvers.deleteBasket,
+        addLike: likeResolvers.addLike,
     },
 };
 
