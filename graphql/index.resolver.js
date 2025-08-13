@@ -32,6 +32,7 @@ const RootResolvers = {
         addFood: foodResolvers.addFood,
         editFood: foodResolvers.editFood,
         deleteFood: foodResolvers.deleteFood,
+        addBasket: basketResolvers.addBasket,
     },
 };
 
