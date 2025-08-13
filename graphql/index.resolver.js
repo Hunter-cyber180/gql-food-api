@@ -29,6 +29,7 @@ const RootResolvers = {
         addSubCategory: subCategoryResolvers.addSubCategory,
         editSubCategory: subCategoryResolvers.editSubCategory,
         deleteSubCategory: subCategoryResolvers.deleteSubCategory,
+        addFood: foodResolvers.addFood,
     },
 };
 
