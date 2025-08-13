@@ -37,6 +37,7 @@ const RootResolvers = {
         deleteBasket: basketResolvers.deleteBasket,
         addLike: likeResolvers.addLike,
         deleteLike: likeResolvers.deleteLike,
+        addOrder: orderResolvers.addOrder,
     },
 };
 
