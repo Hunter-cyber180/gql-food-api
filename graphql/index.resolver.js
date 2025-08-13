@@ -31,6 +31,7 @@ const RootResolvers = {
         deleteSubCategory: subCategoryResolvers.deleteSubCategory,
         addFood: foodResolvers.addFood,
         editFood: foodResolvers.editFood,
+        deleteFood: foodResolvers.deleteFood,
     },
 };
 
