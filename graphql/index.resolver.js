@@ -39,6 +39,7 @@ const RootResolvers = {
         deleteLike: likeResolvers.deleteLike,
         addOrder: orderResolvers.addOrder,
         deleteOrder: orderResolvers.deleteOrder,
+        registerUser: userResolvers.registerUser,
     },
 };
 
