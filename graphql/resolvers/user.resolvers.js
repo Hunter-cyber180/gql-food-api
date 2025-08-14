@@ -10,77 +10,53 @@ const { registerValidator, loginValidator } = require(
     "../../utils/validators/user.validate"
 );
 
+// Handles new user registration
 const registerUser = async (_, { input }) => {
-    const { name, email, phoneNumber, password, role } = input;
+    // Validate input
+    const validateError = registerValidator(input)[0]?.message;
+    if (validateError) throw new Error(validateError);
 
-    const validateResult = registerValidator(input);
-    const error = validateResult[0] ? validateResult[0].message : undefined;
-    if (error)
-        throw new Error(error);
-
-    const isUserExist = await UserModel.findOne({
-        $or: [
-            { email: email },
-            { phoneNumber: phoneNumber }
-        ]
+    // Check if user exists
+    const existingUser = await UserModel.findOne({
+        $or: [{ email: input.email }, { phoneNumber: input.phoneNumber }]
     });
-    if (isUserExist)
-        throw new Error("User already exist!")
+    if (existingUser) throw new Error("User already exists!");
 
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const hasUser = await UserModel.countDocuments();
+    // Create new user (first user becomes ADMIN)
+    const hashedPassword = await bcrypt.hash(input.password, 10);
+    const isFirstUser = (await UserModel.countDocuments()) === 0;
 
-    const userObj = {
-        name,
-        email,
-        phoneNumber,
+    const user = await UserModel.create({
+        ...input,
         password: hashedPassword,
-        role: hasUser ? role : "ADMIN",
-    };
-
-    const user = new UserModel(userObj);
-    await user.save();
-
-    const token = jwt.sign({ id: user._id }, process.env.TOKEN_KEY, {
-        expiresIn: "2d",
+        role: isFirstUser ? "ADMIN" : input.role
     });
 
-    return {
-        token,
-        user,
-    };
+    // Generate JWT token
+    const token = jwt.sign({ id: user._id }, process.env.TOKEN_KEY, { expiresIn: "2d" });
+
+    return { token, user };
 }
 
+// Handles user login
 const loginUser = async (_, { input }) => {
-    const { email, phoneNumber, password } = input;
+    // Validate input
+    const validateError = loginValidator(input)[0]?.message;
+    if (validateError) throw new Error(validateError);
 
-    const validateResult = loginValidator(input);
-    const error = validateResult[0] ? validateResult[0].message : undefined;
-    if (error)
-        throw new Error(error);
-
+    // Find user and verify credentials
     const user = await UserModel.findOne({
-        $or: [{ email }, { phoneNumber }]
+        $or: [{ email: input.email }, { phoneNumber: input.phoneNumber }]
     });
+    if (!user) throw new Error("Invalid credentials");
 
-    if (!user)
-        throw new Error("Invalid Email/phoneNumber or password!");
+    const validPassword = await bcrypt.compare(input.password, user.password);
+    if (!validPassword) throw new Error("Invalid credentials");
 
-    const pass = await bcrypt.compare(password, user.password);
-    if (!pass)
-        throw new Error("Invalid Email/phoneNumber or password!");
+    // Generate JWT token
+    const token = jwt.sign({ id: user._id }, process.env.TOKEN_KEY, { expiresIn: "2d" });
 
-    const token = jwt.sign({ id: user._id }, process.env.TOKEN_KEY, {
-        expiresIn: "2d",
-    });
-
-    return {
-        token,
-        user,
-    };
+    return { token, user };
 }
 
-module.exports = {
-    registerUser,
-    loginUser,
-}
+module.exports = { registerUser, loginUser };
