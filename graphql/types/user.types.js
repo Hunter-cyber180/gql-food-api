@@ -43,10 +43,12 @@ exports.LoginInput = `
   }
 `;
 
+// Authentication result type
+// Returned after login/registration attempts
 exports.AuthResult = `
   type AuthResult {
-    token: String
-    message: String
-    user: User
+    token: String            // JWT token for authenticated sessions
+    message: String         // Status or error message
+    user: User              // Authenticated user's details
   }
 `;
