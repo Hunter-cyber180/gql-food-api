@@ -33,11 +33,13 @@ exports.RegisterInput = `
 `;
 
 
+// Input type for user login
+// Allows login via email OR phone number (using @oneOf directive)
 exports.LoginInput = `
   input LoginInput @oneOf {
-    email: String
-    phoneNumber: Int
-    password: String!
+    email: String             // Email for login (optional when phoneNumber is provided)
+    phoneNumber: Int         // Phone number for login (optional when email is provided)
+    password: String!        // Password is always required
   }
 `;
 
