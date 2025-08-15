@@ -20,15 +20,18 @@ exports.RoleEnum = `
   }
 `;
 
+// Input type for user registration
+// Required fields for creating a new user account
 exports.RegisterInput = `
   input RegisterInput {
-    name: String!
-    email: String!
-    phoneNumber: Int!
-    password: String!
-    role: UserRole!
+    name: String!             // User's full name (required)
+    email: String!            // User's email (required)
+    phoneNumber: Int!         // User's phone number (required)
+    password: String!         // User's password (required)
+    role: UserRole!           // User's role (required, should probably be RoleEnum)
   }
 `;
+
 
 exports.LoginInput = `
   input LoginInput @oneOf {
