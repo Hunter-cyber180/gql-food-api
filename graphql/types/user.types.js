@@ -1,11 +1,13 @@
+// GraphQL type definition for User
+// Defines the structure of a User object in the GraphQL schema
 exports.User = `
-  type Category {
-    _id: ID
-    name: String
-    email: String
-    phoneNumber: Int
-    password: String
-    role: String
+  type User {
+    _id: ID                   // Unique identifier for the user
+    name: String              // Full name of the user
+    email: String             // Email address of the user
+    phoneNumber: Int          // Phone number of the user (stored as integer)
+    password: String          // Hashed password (should not be exposed in queries)
+    role: String              // User's role (admin/user, could use RoleEnum)
   }
 `;
 
