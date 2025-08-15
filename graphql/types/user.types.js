@@ -11,10 +11,12 @@ exports.User = `
   }
 `;
 
+// GraphQL enum for User Roles
+// Defines possible roles a user can have
 exports.RoleEnum = `
   enum RoleEnum {
-    ADMIN
-    USER
+    ADMIN     // Administrator role with full access
+    USER      // Regular user role with standard permissions
   }
 `;
 
