@@ -1,40 +1,42 @@
-const Schema = require("validate");
-const mongoose = require("mongoose");
+const Schema = require("validate"); // Import validation library  
+const mongoose = require("mongoose"); // Import MongoDB library
 
+// Order validation schema
 const orderSchema = new Schema({
     user: {
         type: String,
-        required: true,
+        required: true,  // User reference is required
         validate: {
-            validator: (v) => mongoose.Types.ObjectId.isValid(v),
-            message: "userID must be a valid MongoDB ObjectId!"
+            validator: (v) => mongoose.Types.ObjectId.isValid(v),  // Validate as MongoDB ObjectID
+            message: "userID must be a valid MongoDB ObjectId!"   // Error message
         }
     },
     food: {
         type: String,
-        required: true,
+        required: true,  // Food reference is required
         validate: {
-            validator: (v) => mongoose.Types.ObjectId.isValid(v),
-            message: "foodID must be a valid MongoDB ObjectId!"
+            validator: (v) => mongoose.Types.ObjectId.isValid(v),  // Validate as MongoDB ObjectID
+            message: "foodID must be a valid MongoDB ObjectId!"     // Error message
         }
     },
     quantity: {
         type: String,
         required: true,
-        message: "Quantity is required!",
+        message: "Quantity is required!",  // Error message if missing
     },
     price: {
         type: String,
         required: true,
-        message: "Price is required!",
+        message: "Price is required!",    // Error message if missing
     },
     isDeliver: {
-        type: Boolean,
+        type: Boolean,   // Delivery flag (true/false)
         required: true,
-        message: "IsDeliver is required!",
+        message: "IsDeliver is required!",  // Error message if missing
     },
 });
 
+// Export validation function
 module.exports = {
-    orderValidator: (object) => orderSchema.validate(object)
+    orderValidator: (object) => orderSchema.validate(object)  // Validates order objects
 };
