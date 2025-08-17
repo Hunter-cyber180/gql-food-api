@@ -20,12 +20,12 @@ const orderSchema = new Schema({
         }
     },
     quantity: {
-        type: String,
+        type: Number,
         required: true,
         message: "Quantity is required!",  // Error message if missing
     },
     price: {
-        type: String,
+        type: Number,
         required: true,
         message: "Price is required!",    // Error message if missing
     },
