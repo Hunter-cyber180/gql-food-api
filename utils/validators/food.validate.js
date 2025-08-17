@@ -30,12 +30,12 @@ const foodSchema = new Schema({
         message: "Image is required!",  // Error message if missing
     },
     inventory: {
-        type: String,
+        type: Number,
         required: true,
         message: "Inventory is required!",  // Error message if missing
     },
     price: {
-        type: String,
+        type: Number,
         required: true,
         message: "Price is required!",  // Error message if missing
     },
