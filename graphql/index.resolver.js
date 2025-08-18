@@ -9,6 +9,7 @@ const orderResolvers = require("./resolvers/order.resolvers");
 // * ---- Models ----
 const FoodModel = require("../models/Food");
 const CategoryModel = require("../models/Category");
+const UserModel = require("../models/User");
 
 const RootResolvers = {
     Query: {
@@ -60,6 +61,11 @@ const RootResolvers = {
             return CategoryModel.find({ _id: parent.category });
         }
     },
+    Like: {
+        user: async (parent) => {
+            return UserModel.find({ _id: parent.user });
+        }
+    }
 };
 
 module.exports = RootResolvers;
