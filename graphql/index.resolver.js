@@ -64,6 +64,9 @@ const RootResolvers = {
     Like: {
         user: async (parent) => {
             return UserModel.find({ _id: parent.user });
+        },
+        food: async (parent) => {
+            return FoodModel.find({ _id: parent.food });
         }
     }
 };
