@@ -68,6 +68,11 @@ const RootResolvers = {
         food: async (parent) => {
             return FoodModel.find({ _id: parent.food });
         }
+    },
+    Order: {
+        user: async (parent) => {
+            return UserModel.find({ _id: parent.user });
+        },
     }
 };
 
