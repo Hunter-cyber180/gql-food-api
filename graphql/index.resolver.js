@@ -6,6 +6,9 @@ const categoryResolvers = require("./resolvers/category.resolvers");
 const subCategoryResolvers = require("./resolvers/subcategory.resolvers");
 const orderResolvers = require("./resolvers/order.resolvers");
 
+// * ---- Models ----
+const FoodModel = require("../models/Food");
+
 const RootResolvers = {
     Query: {
         categories: categoryResolvers.categories,
@@ -41,6 +44,12 @@ const RootResolvers = {
         deleteOrder: orderResolvers.deleteOrder,
         registerUser: userResolvers.registerUser,
         loginUser: userResolvers.loginUser,
+    },
+
+    Category: {
+        foods: async (parent) => {
+            return FoodModel.find({ category: parent._id });
+        },
     },
 };
 
