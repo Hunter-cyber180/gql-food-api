@@ -9,6 +9,7 @@ const orderResolvers = require("./resolvers/order.resolvers");
 // * ---- Models ----
 const FoodModel = require("../models/Food");
 const CategoryModel = require("../models/Category");
+const SubCategoryModel = require("../models/SubCategory");
 const UserModel = require("../models/User");
 
 const RootResolvers = {
@@ -80,7 +81,10 @@ const RootResolvers = {
     Food: {
         category: async (parent) => {
             return CategoryModel.find({ _id: parent.category });
-        }
+        },
+        subCategory: async (parent) => {
+            return SubCategoryModel.find({ _id: parent.subCategory });
+        },
     }
 };
 
