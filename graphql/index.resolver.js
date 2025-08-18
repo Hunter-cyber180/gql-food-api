@@ -56,6 +56,9 @@ const RootResolvers = {
         foods: async (parent) => {
             return FoodModel.find({ subCategory: parent._id });
         },
+        category: async (parent) => {
+            return CategoryModel.find({ _id: parent.category });
+        }
     },
 };
 
