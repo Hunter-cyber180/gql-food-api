@@ -1,3 +1,5 @@
+// GraphQL type definition for SubCategory with parent category relationship
+// Includes fields for identification and associated food items
 exports.SubCategory = `
   type SubCategory {
     _id: ID             
@@ -8,6 +10,8 @@ exports.SubCategory = `
   }
 `;
 
+// Input type for SubCategory create/update operations
+// Uses ID reference for parent category and food items
 exports.SubCategoryInput = `
   input SubCategoryInput {
     category: ID    
