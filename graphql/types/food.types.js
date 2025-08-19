@@ -1,3 +1,4 @@
+// GraphQL type definition for Food with all fields and related types
 exports.Food = `
   type Food {
     _id: ID                 
@@ -10,6 +11,8 @@ exports.Food = `
   }
 `;
 
+// Input type for Food create/update operations
+// Uses IDs for category/subCategory references instead of full objects
 exports.FoodInput = `
   input FoodInput {
     name: String                
