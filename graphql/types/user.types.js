@@ -42,10 +42,12 @@ exports.LoginInput = `
   }
 `;
 
+// GraphQL type definition for authentication results
+// Contains JWT token, status message, and user information
 exports.AuthResult = `
   type AuthResult {
-    token: String  
-    message: String
-    user: User     
+    token: String    # JWT authentication token
+    message: String  # Status/error message
+    user: User      # Authenticated user details
   }
 `;
