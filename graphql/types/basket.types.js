@@ -1,3 +1,4 @@
+// GraphQL type definition for Basket entity
 exports.Basket = `
   type Basket {
     _id: ID                
@@ -7,6 +8,7 @@ exports.Basket = `
   }
 `;
 
+// GraphQL input type for Basket mutations
 exports.BasketInput = `
   input BasketInput {
     user: String!          
