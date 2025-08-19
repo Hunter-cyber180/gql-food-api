@@ -85,7 +85,12 @@ const RootResolvers = {
         subCategory: async (parent) => {
             return SubCategoryModel.find({ _id: parent.subCategory });
         },
-    }
+    },
+    Basket: {
+        user: async (parent) => {
+            return UserModel.find({ _id: parent.user });
+        },
+    },
 };
 
 module.exports = RootResolvers;
